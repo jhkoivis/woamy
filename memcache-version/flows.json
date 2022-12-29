@@ -1,0 +1,384 @@
+[
+    {
+        "id": "2f80c86f72380963",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "53c023ec831264af",
+        "type": "function",
+        "z": "2f80c86f72380963",
+        "name": "heatingUnit.0.current_temp_degc",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\nconst client = new memcacheClient.MemcacheClient({ server });\n\n//client.(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\nclient.get(\"heatingUnit.0.current_temp_degc\", function (err, data) {\n    \n    var newMsg = { payload: data.value };\n    node.send(newMsg);\n});\n\n\n//return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "memcacheClient",
+                "module": "memcache-client"
+            }
+        ],
+        "x": 520,
+        "y": 320,
+        "wires": [
+            [
+                "e927f5bbf7b706f4",
+                "a0615d5c4c9086e6",
+                "58f17a878eb927b3"
+            ]
+        ]
+    },
+    {
+        "id": "4634ad75b9dcd491",
+        "type": "inject",
+        "z": "2f80c86f72380963",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 250,
+        "y": 320,
+        "wires": [
+            [
+                "53c023ec831264af",
+                "c95fe476ec313b69",
+                "97deb25e103509bc",
+                "56e667be14fe5a57"
+            ]
+        ]
+    },
+    {
+        "id": "e927f5bbf7b706f4",
+        "type": "data-review",
+        "z": "2f80c86f72380963",
+        "name": "Review data",
+        "property": "payload",
+        "fieldType": "msg",
+        "active": true,
+        "passthru": true,
+        "hide": true,
+        "outputs": 1,
+        "x": 770,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a0615d5c4c9086e6",
+        "type": "ui_gauge",
+        "z": "2f80c86f72380963",
+        "name": "",
+        "group": "4aef4ec636aa1234",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Heating Unit 0",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 800,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "58f17a878eb927b3",
+        "type": "ui_chart",
+        "z": "2f80c86f72380963",
+        "name": "",
+        "group": "4aef4ec636aa1234",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Heating Unit 0",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "10",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 800,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c95fe476ec313b69",
+        "type": "function",
+        "z": "2f80c86f72380963",
+        "name": "heatingUnit.1.current_temp_degc",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\nconst client = new memcacheClient.MemcacheClient({ server });\n\n//client.(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\nclient.get(\"heatingUnit.1.current_temp_degc\", function (err, data) {\n    \n    var newMsg = { payload: data.value };\n    node.send(newMsg);\n});\n\n\n//return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "memcacheClient",
+                "module": "memcache-client"
+            }
+        ],
+        "x": 520,
+        "y": 580,
+        "wires": [
+            [
+                "66ff68502f63fe78",
+                "3b7147e47fd07171",
+                "45c342f00d3b8a54"
+            ]
+        ]
+    },
+    {
+        "id": "66ff68502f63fe78",
+        "type": "data-review",
+        "z": "2f80c86f72380963",
+        "name": "Review data",
+        "property": "payload",
+        "fieldType": "msg",
+        "active": true,
+        "passthru": true,
+        "hide": true,
+        "outputs": 1,
+        "x": 750,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45c342f00d3b8a54",
+        "type": "ui_gauge",
+        "z": "2f80c86f72380963",
+        "name": "",
+        "group": "4aef4ec636aa1234",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Heating Unit 1",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 760,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "3b7147e47fd07171",
+        "type": "ui_chart",
+        "z": "2f80c86f72380963",
+        "name": "",
+        "group": "4aef4ec636aa1234",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Heating Unit 1",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "10",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 760,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97deb25e103509bc",
+        "type": "ui_numeric",
+        "z": "2f80c86f72380963",
+        "name": "",
+        "label": "target hu 0",
+        "tooltip": "",
+        "group": "4aef4ec636aa1234",
+        "order": 4,
+        "width": "2",
+        "height": "2",
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 450,
+        "y": 380,
+        "wires": [
+            [
+                "2cf315c4a11fc150"
+            ]
+        ]
+    },
+    {
+        "id": "2cf315c4a11fc150",
+        "type": "function",
+        "z": "2f80c86f72380963",
+        "name": "heatingUnit.1.target_temp_degc",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\nconst client = new memcacheClient.MemcacheClient({ server });\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\nclient.set(\"heatingUnit.0.target_temp_degc\", msg.payload, function (err, data) {\n \n});\n\n\n//return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "memcacheClient",
+                "module": "memcache-client"
+            }
+        ],
+        "x": 710,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56e667be14fe5a57",
+        "type": "ui_numeric",
+        "z": "2f80c86f72380963",
+        "name": "",
+        "label": "target hu 1",
+        "tooltip": "",
+        "group": "4aef4ec636aa1234",
+        "order": 4,
+        "width": "2",
+        "height": "2",
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 450,
+        "y": 680,
+        "wires": [
+            [
+                "bcd1d4489e817fe3"
+            ]
+        ]
+    },
+    {
+        "id": "bcd1d4489e817fe3",
+        "type": "function",
+        "z": "2f80c86f72380963",
+        "name": "heatingUnit.1.target_temp_degc",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\nconst client = new memcacheClient.MemcacheClient({ server });\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\nclient.set(\"heatingUnit.1.target_temp_degc\", msg.payload, function (err, data) {\n \n});\n\n\n//return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "memcacheClient",
+                "module": "memcache-client"
+            }
+        ],
+        "x": 710,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4aef4ec636aa1234",
+        "type": "ui_group",
+        "name": "Main",
+        "tab": "1c07b0515eab4031",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1c07b0515eab4031",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
