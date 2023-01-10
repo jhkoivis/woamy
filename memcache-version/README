@@ -12,7 +12,7 @@ usage:
 terminal 1:
 ssh woamy_devel@woamyOne
 
-cd ~/sandbox/juha/woamy
+cd ~/sandbox/juha/woamy/memcache-version
 python3 main.py
 
 
