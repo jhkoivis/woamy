@@ -295,10 +295,10 @@
         "type": "function",
         "z": "2f80c86f72380963",
         "name": "heatingUnit.1.target_temp_degc",
-        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\nconst client = new memcacheClient.MemcacheClient({ server });\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\nclient.set(\"heatingUnit.0.target_temp_degc\", msg.payload, function (err, data) {\n \n});\n\n\n//return msg;",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\n\n//if (!isNaN(msg.payload - parseFloat(msg.payload))){\n    context.client.set(\"heatingUnit.0.target_temp_degc\", msg.payload, function (err, data) { });\n//}\n\n\n//client.set(\"heatingUnit.0.target_temp_degc\", msg.payload, function (err, data) {\n//});\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\nvar server = \"localhost:11211\";\n\ncontext.client = new memcacheClient.MemcacheClient({ server });\n\n",
         "finalize": "",
         "libs": [
             {
@@ -309,7 +309,9 @@
         "x": 710,
         "y": 380,
         "wires": [
-            []
+            [
+                "a020c84725e70b7f"
+            ]
         ]
     },
     {
@@ -345,10 +347,10 @@
         "type": "function",
         "z": "2f80c86f72380963",
         "name": "heatingUnit.1.target_temp_degc",
-        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\nconst client = new memcacheClient.MemcacheClient({ server });\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\nclient.set(\"heatingUnit.1.target_temp_degc\", msg.payload, function (err, data) {\n \n});\n\n\n//return msg;",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\n//const server = \"localhost:11211\";\n\n//const client = new memcacheClient.MemcacheClient({ server });\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\ncontext.client.set(\"heatingUnit.1.target_temp_degc\", msg.payload, function (err, data) {\n \n});\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\nvar server = \"localhost:11211\";\n\ncontext.client = new memcacheClient.MemcacheClient({ server });\n",
         "finalize": "",
         "libs": [
             {
@@ -357,6 +359,42 @@
             }
         ],
         "x": 710,
+        "y": 680,
+        "wires": [
+            [
+                "7b1556c76fec3d41"
+            ]
+        ]
+    },
+    {
+        "id": "a020c84725e70b7f",
+        "type": "data-review",
+        "z": "2f80c86f72380963",
+        "name": "Review data",
+        "property": "payload",
+        "fieldType": "msg",
+        "active": true,
+        "passthru": true,
+        "hide": true,
+        "outputs": 1,
+        "x": 970,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b1556c76fec3d41",
+        "type": "data-review",
+        "z": "2f80c86f72380963",
+        "name": "Review data",
+        "property": "payload",
+        "fieldType": "msg",
+        "active": true,
+        "passthru": true,
+        "hide": true,
+        "outputs": 1,
+        "x": 950,
         "y": 680,
         "wires": [
             []
