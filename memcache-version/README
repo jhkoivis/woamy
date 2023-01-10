@@ -3,5 +3,5 @@
 Node red modules (threelines at top right corner -> settings -> manage palette -> install)
 
 node-red-dashboard    node-red-dashboard, version: 3.3.1
-data-review           @datdp88/node-red-contrib-datdp-data-review:data-review
+data-review           @datdp88/node-red-contrib-datdp-data-review, version: 0.0.4
 
