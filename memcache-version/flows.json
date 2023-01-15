@@ -24,7 +24,7 @@
             }
         ],
         "x": 520,
-        "y": 320,
+        "y": 280,
         "wires": [
             [
                 "9a0a7eab0666a98b",
@@ -50,7 +50,7 @@
         "onceDelay": "1",
         "topic": "",
         "x": 250,
-        "y": 320,
+        "y": 280,
         "wires": [
             [
                 "65a0a22c25cbec20",
@@ -98,8 +98,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 800,
-        "y": 260,
+        "x": 780,
+        "y": 280,
         "wires": []
     },
     {
@@ -140,8 +140,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 800,
-        "y": 220,
+        "x": 780,
+        "y": 240,
         "wires": [
             []
         ]
@@ -163,7 +163,7 @@
             }
         ],
         "x": 520,
-        "y": 580,
+        "y": 420,
         "wires": [
             [
                 "1460913d463bbfe2",
@@ -184,7 +184,7 @@
         "hide": true,
         "outputs": 1,
         "x": 750,
-        "y": 580,
+        "y": 460,
         "wires": [
             []
         ]
@@ -213,7 +213,7 @@
         "seg2": "",
         "className": "",
         "x": 760,
-        "y": 640,
+        "y": 420,
         "wires": []
     },
     {
@@ -255,7 +255,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 760,
-        "y": 540,
+        "y": 380,
         "wires": [
             []
         ]
@@ -281,7 +281,7 @@
         "step": 1,
         "className": "",
         "x": 450,
-        "y": 380,
+        "y": 640,
         "wires": [
             [
                 "8c13f9b58901586f"
@@ -292,7 +292,7 @@
         "id": "8c13f9b58901586f",
         "type": "function",
         "z": "807363dce40953f9",
-        "name": "heatingUnit.1.target_temp_degc",
+        "name": "heatingUnit.0.target_temp_degc",
         "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\ncontext.client = flow.get(\"memcache_client\");\n//if (!isNaN(msg.payload - parseFloat(msg.payload))){\n    context.client.set( \"heatingUnit.0.target_temp_degc\", \n                        msg.payload, \n                        {lifetime: 0},\n                        function (err, data) { });\n//}\n\n\n//client.set(\"heatingUnit.0.target_temp_degc\", msg.payload, function (err, data) {\n//});\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
@@ -305,7 +305,7 @@
             }
         ],
         "x": 710,
-        "y": 380,
+        "y": 620,
         "wires": [
             [
                 "439cc2823cb3858a"
@@ -333,7 +333,7 @@
         "step": 1,
         "className": "",
         "x": 450,
-        "y": 680,
+        "y": 720,
         "wires": [
             [
                 "5da34e87b625042d"
@@ -357,7 +357,7 @@
             }
         ],
         "x": 710,
-        "y": 680,
+        "y": 700,
         "wires": [
             [
                 "ae18d2ade3ffeaa4"
@@ -375,8 +375,8 @@
         "passthru": true,
         "hide": true,
         "outputs": 1,
-        "x": 1010,
-        "y": 380,
+        "x": 950,
+        "y": 620,
         "wires": [
             []
         ]
@@ -393,7 +393,7 @@
         "hide": true,
         "outputs": 1,
         "x": 950,
-        "y": 680,
+        "y": 700,
         "wires": [
             []
         ]
@@ -417,13 +417,14 @@
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "payload": "4",
+        "payload": "-4",
         "payloadType": "num",
         "x": 250,
-        "y": 380,
+        "y": 620,
         "wires": [
             [
-                "03490425d2a93217"
+                "03490425d2a93217",
+                "8c13f9b58901586f"
             ]
         ]
     },
@@ -449,10 +450,11 @@
         "payload": "6",
         "payloadType": "num",
         "x": 250,
-        "y": 680,
+        "y": 700,
         "wires": [
             [
-                "fb1b274faccf9606"
+                "fb1b274faccf9606",
+                "5da34e87b625042d"
             ]
         ]
     },
@@ -506,6 +508,36 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "efa7d0c6b22cf151",
+        "type": "comment",
+        "z": "807363dce40953f9",
+        "name": "Init for memcached, run once at 0.1 sec",
+        "info": "",
+        "x": 330,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4cee92d6b462fe30",
+        "type": "comment",
+        "z": "807363dce40953f9",
+        "name": "memcache reads in 3 sec intervals after 1 sec",
+        "info": "",
+        "x": 350,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "bd9161c7e03213b2",
+        "type": "comment",
+        "z": "807363dce40953f9",
+        "name": "memcache writes, run once at 1 sec and on ui change",
+        "info": "",
+        "x": 380,
+        "y": 560,
+        "wires": []
     },
     {
         "id": "4aef4ec636aa1234",
