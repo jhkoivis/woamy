@@ -53,6 +53,9 @@ class heating_unit_mc:
             self.errorCount = 0
         except Exception as e:
             print(str(e))
+            print(self.unit_name)
+            print(self.unit_name + ".target_temp_degc")
+            print(self.mc.get(self.unit_name + ".target_temp_degc"))
             self.errorCount = self.errorCount + 1
 
 

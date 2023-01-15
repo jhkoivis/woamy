@@ -1,6 +1,6 @@
 [
     {
-        "id": "2f80c86f72380963",
+        "id": "807363dce40953f9",
         "type": "tab",
         "label": "Flow 2",
         "disabled": false,
@@ -8,11 +8,11 @@
         "env": []
     },
     {
-        "id": "53c023ec831264af",
+        "id": "65a0a22c25cbec20",
         "type": "function",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "heatingUnit.0.current_temp_degc",
-        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\nconst client = new memcacheClient.MemcacheClient({ server });\n\n//client.(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\nclient.get(\"heatingUnit.0.current_temp_degc\", function (err, data) {\n    \n    var newMsg = { payload: data.value };\n    node.send(newMsg);\n});\n\n\n//return msg;",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\n//context.client = new memcacheClient.MemcacheClient({ server });\ncontext.client = flow.get(\"memcache_client\");\n\n//client.(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\ncontext.client.get(\"heatingUnit.0.current_temp_degc\", function (err, data) {\n    \n    var newMsg = { payload: data.value };\n    node.send(newMsg);\n});\n\n\n//return msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -27,16 +27,16 @@
         "y": 320,
         "wires": [
             [
-                "e927f5bbf7b706f4",
-                "a0615d5c4c9086e6",
-                "58f17a878eb927b3"
+                "9a0a7eab0666a98b",
+                "bd1ce029eed79ba0",
+                "7e5ced2bfacfe9f0"
             ]
         ]
     },
     {
-        "id": "4634ad75b9dcd491",
+        "id": "388cc6d17e423858",
         "type": "inject",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "",
         "props": [
             {
@@ -47,23 +47,21 @@
         "repeat": "3",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
+        "onceDelay": "1",
         "topic": "",
         "x": 250,
         "y": 320,
         "wires": [
             [
-                "53c023ec831264af",
-                "c95fe476ec313b69",
-                "97deb25e103509bc",
-                "56e667be14fe5a57"
+                "65a0a22c25cbec20",
+                "c950bd79a1ef27e7"
             ]
         ]
     },
     {
-        "id": "e927f5bbf7b706f4",
+        "id": "9a0a7eab0666a98b",
         "type": "data-review",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "Review data",
         "property": "payload",
         "fieldType": "msg",
@@ -78,9 +76,9 @@
         ]
     },
     {
-        "id": "a0615d5c4c9086e6",
+        "id": "bd1ce029eed79ba0",
         "type": "ui_gauge",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "",
         "group": "4aef4ec636aa1234",
         "order": 0,
@@ -105,9 +103,9 @@
         "wires": []
     },
     {
-        "id": "58f17a878eb927b3",
+        "id": "7e5ced2bfacfe9f0",
         "type": "ui_chart",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "",
         "group": "4aef4ec636aa1234",
         "order": 1,
@@ -149,11 +147,11 @@
         ]
     },
     {
-        "id": "c95fe476ec313b69",
+        "id": "c950bd79a1ef27e7",
         "type": "function",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "heatingUnit.1.current_temp_degc",
-        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\nconst client = new memcacheClient.MemcacheClient({ server });\n\n//client.(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\nclient.get(\"heatingUnit.1.current_temp_degc\", function (err, data) {\n    \n    var newMsg = { payload: data.value };\n    node.send(newMsg);\n});\n\n\n//return msg;",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\nconst server = \"localhost:11211\";\n\n//context.client = new memcacheClient.MemcacheClient({ server });\ncontext.client = flow.get(\"memcache_client\");\n\n//client.(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\ncontext.client.get(\"heatingUnit.1.current_temp_degc\", function (err, data) {\n    \n    var newMsg = { payload: data.value };\n    node.send(newMsg);\n});\n\n\n//return msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -168,16 +166,16 @@
         "y": 580,
         "wires": [
             [
-                "66ff68502f63fe78",
-                "3b7147e47fd07171",
-                "45c342f00d3b8a54"
+                "1460913d463bbfe2",
+                "108c083b864ed1aa",
+                "7e67481ca86f8963"
             ]
         ]
     },
     {
-        "id": "66ff68502f63fe78",
+        "id": "1460913d463bbfe2",
         "type": "data-review",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "Review data",
         "property": "payload",
         "fieldType": "msg",
@@ -192,9 +190,9 @@
         ]
     },
     {
-        "id": "45c342f00d3b8a54",
+        "id": "7e67481ca86f8963",
         "type": "ui_gauge",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "",
         "group": "4aef4ec636aa1234",
         "order": 0,
@@ -219,9 +217,9 @@
         "wires": []
     },
     {
-        "id": "3b7147e47fd07171",
+        "id": "108c083b864ed1aa",
         "type": "ui_chart",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "",
         "group": "4aef4ec636aa1234",
         "order": 1,
@@ -263,9 +261,9 @@
         ]
     },
     {
-        "id": "97deb25e103509bc",
+        "id": "03490425d2a93217",
         "type": "ui_numeric",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "",
         "label": "target hu 0",
         "tooltip": "",
@@ -274,7 +272,7 @@
         "width": "2",
         "height": "2",
         "wrap": false,
-        "passthru": false,
+        "passthru": true,
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}}",
@@ -286,19 +284,19 @@
         "y": 380,
         "wires": [
             [
-                "2cf315c4a11fc150"
+                "8c13f9b58901586f"
             ]
         ]
     },
     {
-        "id": "2cf315c4a11fc150",
+        "id": "8c13f9b58901586f",
         "type": "function",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "heatingUnit.1.target_temp_degc",
-        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\n\n//if (!isNaN(msg.payload - parseFloat(msg.payload))){\n    context.client.set(\"heatingUnit.0.target_temp_degc\", msg.payload, function (err, data) { });\n//}\n\n\n//client.set(\"heatingUnit.0.target_temp_degc\", msg.payload, function (err, data) {\n//});\n\n\nreturn msg;",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\ncontext.client = flow.get(\"memcache_client\");\n//if (!isNaN(msg.payload - parseFloat(msg.payload))){\n    context.client.set( \"heatingUnit.0.target_temp_degc\", \n                        msg.payload, \n                        {lifetime: 0},\n                        function (err, data) { });\n//}\n\n\n//client.set(\"heatingUnit.0.target_temp_degc\", msg.payload, function (err, data) {\n//});\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\nvar server = \"localhost:11211\";\n\ncontext.client = new memcacheClient.MemcacheClient({ server });\n\n",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\nvar server = \"localhost:11211\";\n\n//context.client = new memcacheClient.MemcacheClient({ server });\ncontext.client = flow.get(\"memcache_client\");\n\n",
         "finalize": "",
         "libs": [
             {
@@ -310,14 +308,14 @@
         "y": 380,
         "wires": [
             [
-                "a020c84725e70b7f"
+                "439cc2823cb3858a"
             ]
         ]
     },
     {
-        "id": "56e667be14fe5a57",
+        "id": "fb1b274faccf9606",
         "type": "ui_numeric",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "",
         "label": "target hu 1",
         "tooltip": "",
@@ -338,19 +336,19 @@
         "y": 680,
         "wires": [
             [
-                "bcd1d4489e817fe3"
+                "5da34e87b625042d"
             ]
         ]
     },
     {
-        "id": "bcd1d4489e817fe3",
+        "id": "5da34e87b625042d",
         "type": "function",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "heatingUnit.1.target_temp_degc",
-        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\n//const server = \"localhost:11211\";\n\n//const client = new memcacheClient.MemcacheClient({ server });\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\ncontext.client.set(\"heatingUnit.1.target_temp_degc\", msg.payload, function (err, data) {\n \n});\n\n\nreturn msg;",
+        "func": "\n// create a normal client\n\nvar err;\nvar r;\nvar data;\n\n//const server = \"localhost:11211\";\n\n//const client = new memcacheClient.MemcacheClient({ server });\n\n//client.set(\"key\", \"test\", (err, r) => {\n//    msg.payload = r;\n//});\n//client.get(\"key\", (err, data) => {\n//    msg.payload = data;\n//});\ncontext.client = flow.get(\"memcache_client\");\ncontext.client.set( \"heatingUnit.1.target_temp_degc\", \n                    msg.payload, \n                    {lifetime: 0},\n                    function (err, data) {});\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\nvar server = \"localhost:11211\";\n\ncontext.client = new memcacheClient.MemcacheClient({ server });\n",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\nvar server = \"localhost:11211\";\n\n//context.client = new memcacheClient.MemcacheClient({ server });\ncontext.client = flow.get(\"memcache_client\");",
         "finalize": "",
         "libs": [
             {
@@ -362,14 +360,14 @@
         "y": 680,
         "wires": [
             [
-                "7b1556c76fec3d41"
+                "ae18d2ade3ffeaa4"
             ]
         ]
     },
     {
-        "id": "a020c84725e70b7f",
+        "id": "439cc2823cb3858a",
         "type": "data-review",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "Review data",
         "property": "payload",
         "fieldType": "msg",
@@ -377,16 +375,16 @@
         "passthru": true,
         "hide": true,
         "outputs": 1,
-        "x": 970,
+        "x": 1010,
         "y": 380,
         "wires": [
             []
         ]
     },
     {
-        "id": "7b1556c76fec3d41",
+        "id": "ae18d2ade3ffeaa4",
         "type": "data-review",
-        "z": "2f80c86f72380963",
+        "z": "807363dce40953f9",
         "name": "Review data",
         "property": "payload",
         "fieldType": "msg",
@@ -396,6 +394,115 @@
         "outputs": 1,
         "x": 950,
         "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a294781c103b0530",
+        "type": "inject",
+        "z": "807363dce40953f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "4",
+        "payloadType": "num",
+        "x": 250,
+        "y": 380,
+        "wires": [
+            [
+                "03490425d2a93217"
+            ]
+        ]
+    },
+    {
+        "id": "df8506766bb81489",
+        "type": "inject",
+        "z": "807363dce40953f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "6",
+        "payloadType": "num",
+        "x": 250,
+        "y": 680,
+        "wires": [
+            [
+                "fb1b274faccf9606"
+            ]
+        ]
+    },
+    {
+        "id": "d38f4442cdc96cbf",
+        "type": "inject",
+        "z": "807363dce40953f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "ab1452ded2f46fde"
+            ]
+        ]
+    },
+    {
+        "id": "ab1452ded2f46fde",
+        "type": "function",
+        "z": "807363dce40953f9",
+        "name": "init_memcache_client",
+        "func": "\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\nvar server = \"localhost:11211\";\n\nflow.set(\"memcache_client\", new memcacheClient.MemcacheClient({ server }));\n\n",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "memcacheClient",
+                "module": "memcache-client"
+            }
+        ],
+        "x": 500,
+        "y": 100,
         "wires": [
             []
         ]
