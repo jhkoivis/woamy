@@ -19,7 +19,7 @@ defaults = {
     "heatingUnit.1.switch_ro"           : 0,
     "heatingUnit.1.pythonImportName"    : "heating_unit_mc",
 
-    "listOfDevices"                     : ["heatingUnit.0","heatingUnit.1"]
+    "listOfDevices"                     : ["heatingUnit.0", "heatingUnit.1"]
     }
 
 

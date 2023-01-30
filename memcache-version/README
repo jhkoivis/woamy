@@ -1,0 +1,27 @@
+
+
+Node red modules (threelines at top right corner -> settings -> manage palette -> install)
+
+node-red-dashboard    node-red-dashboard, version: 3.3.1
+data-review           @datdp88/node-red-contrib-datdp-data-review, version: 0.0.4
+
+
+
+usage:
+
+terminal 1:
+ssh woamy_devel@woamyOne
+
+cd ~/sandbox/juha/woamy/memcache-version
+python3 main.py
+
+
+terminal 2:
+ssh woamy_devel@woamyOne
+
+node-red
+
+Any computer:
+firefox -> 192.168.0.90:1880
+firefox -> 192.168.0.90:1880/ui
+
