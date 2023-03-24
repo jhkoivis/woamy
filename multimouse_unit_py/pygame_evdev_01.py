@@ -1,4 +1,6 @@
 import pygame
+import subprocess
+
 
 pygame.init()
 window = pygame.display.set_mode((1000, 1000))
@@ -8,8 +10,20 @@ import asyncio, evdev
 # how to know which is which /dev/input/event
 # ls -lha /dev/input/by-path/
 
+out = subprocess.run(["ls", "-lha", "/dev/input/by-path/"], capture_output=True)
+
+print(out.stdout)
+
+mouse_name_list = []
+for line  in out.stdout.decode("utf-8").split('\n'):
+    if "../event" in line and "mouse" in line:
+        mouse_name = "/dev/input/event" + line.split("../event")[1].strip()
+        mouse_name_list.append(mouse_name)
+
+print(mouse_name_list)
+
 # modify this list to include all mouses
-mouse_name_list = ["/dev/input/event3", "/dev/input/event17", "/dev/input/event18"]
+#mouse_name_list = ["/dev/input/event3", "/dev/input/by-path/pci-0000:00:14.0-usb-0:6.3:1.0-event-mouse", "/dev/input/mouse2"]
 device_list = [evdev.InputDevice(name) for name in mouse_name_list]
 
 # uncomment to grab all data (cursor does not move if you grab all mouses)
@@ -25,24 +39,19 @@ async def print_events(device):
         rel_x = 0
         rel_y = 0
         if event.type == 2:
+            print(device.path)
             mouse_no = device.path.split("event")[1]
             if event.code == 0: rel_x = event.value
             if event.code == 1: rel_y = event.value
             #print(device.path.split("event")[1], " ", event.value)
         
-        map_mouse = {'3'  : 0,
-                     '17' : 1,
-                     '18' : 2}
-
-        mouse_locations[map_mouse[mouse_no]][0] += rel_x 
-        mouse_locations[map_mouse[mouse_no]][1] += rel_y 
+        mouse_locations[mouse_name_list.index(device.path)][0] += rel_x 
+        mouse_locations[mouse_name_list.index(device.path)][1] += rel_y 
         
         mouse_colors = [[255,0,0], [0,255,0], [0,0,255]]
 
-        
-
-        window.set_at( mouse_locations[map_mouse[mouse_no]],
-                        mouse_colors   [map_mouse[mouse_no]])
+        window.set_at( mouse_locations[mouse_name_list.index(device.path)],
+                        mouse_colors  [mouse_name_list.index(device.path)])
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
