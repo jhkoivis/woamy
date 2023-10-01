@@ -485,7 +485,7 @@
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "payload": "-3",
+        "payload": "-4",
         "payloadType": "num",
         "x": 250,
         "y": 620,

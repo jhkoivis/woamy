@@ -1,0 +1,13 @@
+
+
+memcache-version:
+- runs memcache and node-red
+- simple version, only heater unit installed
+
+opcua_belt:
+- example how to use ewon flexy
+- shows how to write parameters through ewon flexy's opcua interface
+
+
+
+
