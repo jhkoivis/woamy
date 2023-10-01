@@ -1,4 +1,6 @@
 
+seacontainer:
+- software for the seacontainer 2023 device
 
 memcache-version:
 - runs memcache and node-red
