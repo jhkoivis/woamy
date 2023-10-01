@@ -1,0 +1,609 @@
+[
+    {
+        "id": "62f4649d5a821551",
+        "type": "tab",
+        "label": "Woamy One",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8df0880d30f2d91b",
+        "type": "ui_gauge",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "group": "081e74f917a8cb44",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Heating Unit 0",
+        "label": "",
+        "format": "{{value}} °C",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#0056d6",
+            "#f5ec00",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1040,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2d3c380c31b5c802",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Prepare set request",
+        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set heatingUnit.0.target 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 420,
+        "wires": [
+            [
+                "2ca0039bf4d7931a"
+            ]
+        ]
+    },
+    {
+        "id": "2ca0039bf4d7931a",
+        "type": "tcp request",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "11211",
+        "out": "time",
+        "ret": "buffer",
+        "splitc": "1000",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 580,
+        "y": 420,
+        "wires": [
+            [
+                "65412fc9058fdca8"
+            ]
+        ]
+    },
+    {
+        "id": "65412fc9058fdca8",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Post process result",
+        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 420,
+        "wires": [
+            [
+                "9e2d24c7eb4eeed5"
+            ]
+        ]
+    },
+    {
+        "id": "9e2d24c7eb4eeed5",
+        "type": "debug",
+        "z": "62f4649d5a821551",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7ce2524686577392",
+        "type": "tcp request",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "11211",
+        "out": "time",
+        "ret": "buffer",
+        "splitc": "1000",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 580,
+        "y": 340,
+        "wires": [
+            [
+                "ac2efc9aed81eb4e"
+            ]
+        ]
+    },
+    {
+        "id": "ac2efc9aed81eb4e",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Post process result",
+        "func": "msg.payload = msg.payload.toString(\"utf8\");\nmsg.payload = msg.payload.split(\" \");\nmsg.payload = msg.payload.slice(-1).pop();\nmsg.payload = msg.payload.split(\"\\r\\n\");\nmsg.payload = msg.payload.slice(1,2).pop();\nmsg.payload = parseFloat(msg.payload);\nmsg.payload = Math.round(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 340,
+        "wires": [
+            [
+                "8df0880d30f2d91b"
+            ]
+        ]
+    },
+    {
+        "id": "c4b812550d180a62",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Prepare set request",
+        "func": "msg.payload = \"get heatingUnit.0.target\\r\\n\"; // get key\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 340,
+        "wires": [
+            [
+                "7ce2524686577392"
+            ]
+        ]
+    },
+    {
+        "id": "e0b00df5536998ad",
+        "type": "inject",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "c4b812550d180a62"
+            ]
+        ]
+    },
+    {
+        "id": "fdc250af19862a08",
+        "type": "ui_slider",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "label": "Pump Speed",
+        "tooltip": "",
+        "group": "081e74f917a8cb44",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 170,
+        "y": 500,
+        "wires": [
+            [
+                "842151f6efe5643a"
+            ]
+        ]
+    },
+    {
+        "id": "842151f6efe5643a",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Prepare set request",
+        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set pump.0.target 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 500,
+        "wires": [
+            [
+                "f609092fe8652967"
+            ]
+        ]
+    },
+    {
+        "id": "f609092fe8652967",
+        "type": "tcp request",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "11211",
+        "out": "time",
+        "ret": "buffer",
+        "splitc": "1000",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 580,
+        "y": 500,
+        "wires": [
+            [
+                "1cbf2bdbb9cc8c06"
+            ]
+        ]
+    },
+    {
+        "id": "1cbf2bdbb9cc8c06",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Post process result",
+        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 500,
+        "wires": [
+            [
+                "9e2d24c7eb4eeed5"
+            ]
+        ]
+    },
+    {
+        "id": "0d700ca01e093c88",
+        "type": "ui_slider",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "label": "Foamer Air",
+        "tooltip": "",
+        "group": "081e74f917a8cb44",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "2",
+        "step": "0.01",
+        "className": "",
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "88115a584941422b"
+            ]
+        ]
+    },
+    {
+        "id": "88115a584941422b",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Prepare set request",
+        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set foamerAir.0.target 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 580,
+        "wires": [
+            [
+                "d9cb1fa515c5316b"
+            ]
+        ]
+    },
+    {
+        "id": "d9cb1fa515c5316b",
+        "type": "tcp request",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "11211",
+        "out": "time",
+        "ret": "buffer",
+        "splitc": "1000",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 580,
+        "y": 580,
+        "wires": [
+            [
+                "9e480882e386f931"
+            ]
+        ]
+    },
+    {
+        "id": "9e480882e386f931",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Post process result",
+        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 580,
+        "wires": [
+            [
+                "9e2d24c7eb4eeed5"
+            ]
+        ]
+    },
+    {
+        "id": "36040f69f132d473",
+        "type": "ui_slider",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "label": "Conveyor Belt",
+        "tooltip": "",
+        "group": "081e74f917a8cb44",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1000",
+        "max": "4000",
+        "step": "1",
+        "className": "",
+        "x": 160,
+        "y": 660,
+        "wires": [
+            [
+                "ac8a866fbdb3ec4e"
+            ]
+        ]
+    },
+    {
+        "id": "ac8a866fbdb3ec4e",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Prepare set request",
+        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set conveyorBelt.0.target 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 660,
+        "wires": [
+            [
+                "db6c38f13362ee36"
+            ]
+        ]
+    },
+    {
+        "id": "db6c38f13362ee36",
+        "type": "tcp request",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "11211",
+        "out": "time",
+        "ret": "buffer",
+        "splitc": "1000",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 580,
+        "y": 660,
+        "wires": [
+            [
+                "cde9c549e37a7b7d"
+            ]
+        ]
+    },
+    {
+        "id": "cde9c549e37a7b7d",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Post process result",
+        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 660,
+        "wires": [
+            [
+                "9e2d24c7eb4eeed5"
+            ]
+        ]
+    },
+    {
+        "id": "3327c07cb54b169f",
+        "type": "ui_slider",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "label": "Heater target",
+        "tooltip": "",
+        "group": "081e74f917a8cb44",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "200",
+        "step": 1,
+        "className": "",
+        "x": 170,
+        "y": 420,
+        "wires": [
+            [
+                "2d3c380c31b5c802"
+            ]
+        ]
+    },
+    {
+        "id": "b5638dcdab96bd22",
+        "type": "ui_switch",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "label": "Conveyor belt switch",
+        "tooltip": "",
+        "group": "081e74f917a8cb44",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 760,
+        "wires": [
+            [
+                "aa7e0470b7d24e3a"
+            ]
+        ]
+    },
+    {
+        "id": "aa7e0470b7d24e3a",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Prepare set request",
+        "func": "if (msg.payload) {\n    msg.payload = \"set conveyorBelt.0.status 0 0 \" + \"1\" + \"\\r\\n\" + \"1\" + \"\\r\\n\"; // set key\n\n} else {\n    msg.payload = \"set conveyorBelt.0.status 0 0 \" + \"1\" + \"\\r\\n\" + \"5\" + \"\\r\\n\"; // set key\n\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 760,
+        "wires": [
+            [
+                "0400c8e014c4623d"
+            ]
+        ]
+    },
+    {
+        "id": "0400c8e014c4623d",
+        "type": "tcp request",
+        "z": "62f4649d5a821551",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "11211",
+        "out": "time",
+        "ret": "buffer",
+        "splitc": "1000",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 580,
+        "y": 760,
+        "wires": [
+            [
+                "da14372138e8c329"
+            ]
+        ]
+    },
+    {
+        "id": "da14372138e8c329",
+        "type": "function",
+        "z": "62f4649d5a821551",
+        "name": "Post process result",
+        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 760,
+        "wires": [
+            [
+                "9e2d24c7eb4eeed5"
+            ]
+        ]
+    },
+    {
+        "id": "d948fd511cd0a93c",
+        "type": "ui_spacer",
+        "z": "62f4649d5a821551",
+        "name": "spacer",
+        "group": "081e74f917a8cb44",
+        "order": 1,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "081e74f917a8cb44",
+        "type": "ui_group",
+        "name": "Control panel",
+        "tab": "d39b4959a5f94ec7",
+        "order": 1,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d39b4959a5f94ec7",
+        "type": "ui_tab",
+        "name": "WoamyOne",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
