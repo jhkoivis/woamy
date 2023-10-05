@@ -8,202 +8,20 @@
         "env": []
     },
     {
-        "id": "1643ae253a35ffee",
-        "type": "ui_spacer",
-        "z": "389b894943a43ae8",
-        "name": "spacer",
-        "group": "081e74f917a8cb44",
-        "order": 1,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "081e74f917a8cb44",
-        "type": "ui_group",
-        "name": "Conveyer Belt",
-        "tab": "d39b4959a5f94ec7",
-        "order": 1,
-        "disp": true,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "d39b4959a5f94ec7",
-        "type": "ui_tab",
-        "name": "WoamyOne",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "7c9cdce496b05649",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "72be69f49ff34214",
-        "type": "ui_group",
-        "name": "Foamer Air Flow",
-        "tab": "d39b4959a5f94ec7",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "da04fbb8882c3dc4",
-        "type": "ui_group",
-        "name": "Foamer Head Speed",
-        "tab": "d39b4959a5f94ec7",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "1270fdb95a863d2f",
-        "type": "ui_group",
-        "name": "Product pump speed",
-        "tab": "d39b4959a5f94ec7",
-        "order": 4,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "01265634c9e8b74b",
-        "type": "ui_group",
-        "name": "Back pressure",
-        "tab": "d39b4959a5f94ec7",
-        "order": 5,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "8fc72fd35c03bb7e",
-        "type": "ui_group",
-        "name": "Product Flow Capacity",
-        "tab": "d39b4959a5f94ec7",
-        "order": 6,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "19dad0f7d5dc3a46",
         "type": "debug",
         "z": "389b894943a43ae8",
         "name": "debug 4",
         "active": true,
         "tosidebar": true,
-        "console": true,
+        "console": false,
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1550,
-        "y": 840,
+        "x": 900,
+        "y": 200,
         "wires": []
     },
     {
@@ -229,7 +47,7 @@
         "y": 840,
         "wires": [
             [
-                "c8929847378a91a3"
+                "39f2d92977791fb9"
             ]
         ]
     },
@@ -244,7 +62,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
+        "x": 410,
         "y": 840,
         "wires": [
             [
@@ -265,7 +83,7 @@
         "newline": "",
         "trim": false,
         "tls": "",
-        "x": 1020,
+        "x": 630,
         "y": 840,
         "wires": [
             [
@@ -284,7 +102,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1280,
+        "x": 850,
         "y": 840,
         "wires": [
             [
@@ -337,7 +155,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
+        "x": 430,
         "y": 920,
         "wires": [
             [
@@ -358,7 +176,7 @@
         "newline": "",
         "trim": false,
         "tls": "",
-        "x": 1020,
+        "x": 690,
         "y": 920,
         "wires": [
             [
@@ -377,7 +195,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1280,
+        "x": 950,
         "y": 920,
         "wires": [
             [
@@ -386,617 +204,33 @@
         ]
     },
     {
-        "id": "6506c1f85f27c2b3",
-        "type": "ui_numeric",
+        "id": "1643ae253a35ffee",
+        "type": "ui_spacer",
         "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Air flow, 10-99 (%)",
-        "tooltip": "",
-        "group": "72be69f49ff34214",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "10",
-        "max": "99",
-        "step": 1,
-        "className": "",
-        "x": 410,
-        "y": 1020,
-        "wires": [
-            [
-                "df509f91e0c1a659",
-                "a970d558d025f352"
-            ]
-        ]
-    },
-    {
-        "id": "df509f91e0c1a659",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Prepare set request",
-        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set foamer.0.MES_TO_PLC_air_flow 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 1020,
-        "wires": [
-            [
-                "c7416904350d08db"
-            ]
-        ]
-    },
-    {
-        "id": "76bb92b627ec0fac",
-        "type": "comment",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "info": "MES_TO_PLC_air_flow(one)\nMES_TO_PLC_head_speed(two)\nMES_TO_PLC_pressure_head(three)\nMES_TO_PLC_product_flow(four)\nMES_TO_PLC_pump_speed(fife)",
-        "x": 280,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "c7416904350d08db",
-        "type": "tcp request",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "server": "127.0.0.1",
-        "port": "11211",
-        "out": "time",
-        "ret": "buffer",
-        "splitc": "1000",
-        "newline": "",
-        "trim": false,
-        "tls": "",
-        "x": 1020,
-        "y": 1020,
-        "wires": [
-            [
-                "f7ce3f71ed647a6b"
-            ]
-        ]
-    },
-    {
-        "id": "f7ce3f71ed647a6b",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Post process result",
-        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1290,
-        "y": 1020,
-        "wires": [
-            [
-                "19dad0f7d5dc3a46"
-            ]
-        ]
-    },
-    {
-        "id": "fac31d79f88c6909",
-        "type": "ui_numeric",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Head Speed, 500 - 1000 (rpm)",
-        "tooltip": "",
-        "group": "da04fbb8882c3dc4",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "500",
-        "max": "1000",
-        "step": "1",
-        "className": "",
-        "x": 450,
-        "y": 1100,
-        "wires": [
-            [
-                "d3d9a493c93f6f37",
-                "b6aaef3a4d6827bc"
-            ]
-        ]
-    },
-    {
-        "id": "d3d9a493c93f6f37",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Prepare set request",
-        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set foamer.0.MES_TO_PLC_head_speed 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 1100,
-        "wires": [
-            [
-                "dbbfc975e65f49da"
-            ]
-        ]
-    },
-    {
-        "id": "dbbfc975e65f49da",
-        "type": "tcp request",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "server": "127.0.0.1",
-        "port": "11211",
-        "out": "time",
-        "ret": "buffer",
-        "splitc": "1000",
-        "newline": "",
-        "trim": false,
-        "tls": "",
-        "x": 1020,
-        "y": 1100,
-        "wires": [
-            [
-                "6a2a30eadd83bca8"
-            ]
-        ]
-    },
-    {
-        "id": "6a2a30eadd83bca8",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Post process result",
-        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1290,
-        "y": 1100,
-        "wires": [
-            [
-                "19dad0f7d5dc3a46"
-            ]
-        ]
-    },
-    {
-        "id": "6d937019aab51908",
-        "type": "ui_numeric",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Product pump speed, 50 - 100 (rpm)",
-        "tooltip": "",
-        "group": "1270fdb95a863d2f",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "50",
-        "max": "100",
-        "step": "1",
-        "className": "",
-        "x": 470,
-        "y": 1160,
-        "wires": [
-            [
-                "b46e0da248f99a98",
-                "6a4241258dadd655"
-            ]
-        ]
-    },
-    {
-        "id": "b46e0da248f99a98",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Prepare set request",
-        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set foamer.0.MES_TO_PLC_pump_speed 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 1160,
-        "wires": [
-            [
-                "4fd2d89d6547690a"
-            ]
-        ]
-    },
-    {
-        "id": "4fd2d89d6547690a",
-        "type": "tcp request",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "server": "127.0.0.1",
-        "port": "11211",
-        "out": "time",
-        "ret": "buffer",
-        "splitc": "1000",
-        "newline": "",
-        "trim": false,
-        "tls": "",
-        "x": 1020,
-        "y": 1160,
-        "wires": [
-            [
-                "2c5ff7e90c8b9781"
-            ]
-        ]
-    },
-    {
-        "id": "2c5ff7e90c8b9781",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Post process result",
-        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1290,
-        "y": 1160,
-        "wires": [
-            [
-                "19dad0f7d5dc3a46"
-            ]
-        ]
-    },
-    {
-        "id": "3de91ec491aae860",
-        "type": "ui_numeric",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Back pressure, 10 - 80 (Bar x 10)",
-        "tooltip": "",
-        "group": "01265634c9e8b74b",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "10",
-        "max": "80",
-        "step": "1",
-        "className": "",
-        "x": 460,
-        "y": 1220,
-        "wires": [
-            [
-                "879ec893d263ec0e",
-                "e51477b291bdc72b"
-            ]
-        ]
-    },
-    {
-        "id": "879ec893d263ec0e",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Prepare set request",
-        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set foamer.0.MES_TO_PLC_pressure_head 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 1220,
-        "wires": [
-            [
-                "d30f2db792b2e82b"
-            ]
-        ]
-    },
-    {
-        "id": "d30f2db792b2e82b",
-        "type": "tcp request",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "server": "127.0.0.1",
-        "port": "11211",
-        "out": "time",
-        "ret": "buffer",
-        "splitc": "1000",
-        "newline": "",
-        "trim": false,
-        "tls": "",
-        "x": 1020,
-        "y": 1220,
-        "wires": [
-            [
-                "3eb914e1555852a6"
-            ]
-        ]
-    },
-    {
-        "id": "3eb914e1555852a6",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Post process result",
-        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1290,
-        "y": 1220,
-        "wires": [
-            [
-                "19dad0f7d5dc3a46"
-            ]
-        ]
-    },
-    {
-        "id": "fb10cb8948dff96c",
-        "type": "ui_numeric",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Product flow capacity, 200 - 1000 (kg/h)",
-        "tooltip": "",
-        "group": "8fc72fd35c03bb7e",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "200",
-        "max": "1000",
-        "step": "1",
-        "className": "",
-        "x": 480,
-        "y": 1280,
-        "wires": [
-            [
-                "ebfe2139bbd48fdd",
-                "aa6347770ce46ebd"
-            ]
-        ]
-    },
-    {
-        "id": "ebfe2139bbd48fdd",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Prepare set request",
-        "func": "let val = msg.payload.toString();\nlet bits = val.length.toString();\nmsg.payload = \"set foamer.0.MES_TO_PLC_product_flow 0 0 \" + bits + \"\\r\\n\" + val + \"\\r\\n\"; // set key\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 1280,
-        "wires": [
-            [
-                "dbbb5f7f88c54b0f"
-            ]
-        ]
-    },
-    {
-        "id": "dbbb5f7f88c54b0f",
-        "type": "tcp request",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "server": "127.0.0.1",
-        "port": "11211",
-        "out": "time",
-        "ret": "buffer",
-        "splitc": "1000",
-        "newline": "",
-        "trim": false,
-        "tls": "",
-        "x": 1020,
-        "y": 1280,
-        "wires": [
-            [
-                "a2044169026a6264"
-            ]
-        ]
-    },
-    {
-        "id": "a2044169026a6264",
-        "type": "function",
-        "z": "389b894943a43ae8",
-        "name": "Post process result",
-        "func": "msg.payload = msg.payload.toString(\"utf8\");\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1290,
-        "y": 1280,
-        "wires": [
-            [
-                "19dad0f7d5dc3a46"
-            ]
-        ]
-    },
-    {
-        "id": "a970d558d025f352",
-        "type": "ui_slider",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Air flow",
-        "tooltip": "",
-        "group": "72be69f49ff34214",
-        "order": 6,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "10",
-        "max": "99",
-        "step": "1",
-        "className": "",
-        "x": 120,
-        "y": 1020,
-        "wires": [
-            [
-                "6506c1f85f27c2b3"
-            ]
-        ]
-    },
-    {
-        "id": "b6aaef3a4d6827bc",
-        "type": "ui_slider",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Head speed",
-        "tooltip": "",
-        "group": "da04fbb8882c3dc4",
-        "order": 6,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "500",
-        "max": "1000",
-        "step": "1",
-        "className": "",
-        "x": 130,
-        "y": 1100,
-        "wires": [
-            [
-                "fac31d79f88c6909"
-            ]
-        ]
-    },
-    {
-        "id": "6a4241258dadd655",
-        "type": "ui_slider",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Product pump speed",
-        "tooltip": "",
-        "group": "1270fdb95a863d2f",
-        "order": 6,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "50",
-        "max": "100",
-        "step": "1",
-        "className": "",
-        "x": 160,
-        "y": 1160,
-        "wires": [
-            [
-                "6d937019aab51908"
-            ]
-        ]
-    },
-    {
-        "id": "e51477b291bdc72b",
-        "type": "ui_slider",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Back pressure",
-        "tooltip": "",
-        "group": "01265634c9e8b74b",
-        "order": 6,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "10",
-        "max": "80",
-        "step": "1",
-        "className": "",
-        "x": 140,
-        "y": 1220,
-        "wires": [
-            [
-                "3de91ec491aae860"
-            ]
-        ]
-    },
-    {
-        "id": "aa6347770ce46ebd",
-        "type": "ui_slider",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Product flow capacity",
-        "tooltip": "",
-        "group": "8fc72fd35c03bb7e",
-        "order": 6,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "outs": "end",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": "200",
-        "max": "1000",
-        "step": "1",
-        "className": "",
-        "x": 160,
-        "y": 1280,
-        "wires": [
-            [
-                "fb10cb8948dff96c"
-            ]
-        ]
-    },
-    {
-        "id": "c8929847378a91a3",
-        "type": "ui_numeric",
-        "z": "389b894943a43ae8",
-        "name": "",
-        "label": "Conveyer Belt speed, 1 - 100 (%)",
-        "tooltip": "",
+        "name": "spacer",
         "group": "081e74f917a8cb44",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "10",
-        "max": "99",
-        "step": 1,
-        "className": "",
-        "x": 460,
-        "y": 840,
-        "wires": [
-            [
-                "39f2d92977791fb9",
-                "49e03f5cf27c1677"
-            ]
-        ]
+        "order": 1,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "081e74f917a8cb44",
+        "type": "ui_group",
+        "name": "Control panel",
+        "tab": "d39b4959a5f94ec7",
+        "order": 1,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d39b4959a5f94ec7",
+        "type": "ui_tab",
+        "name": "WoamyOne",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     }
 ]
