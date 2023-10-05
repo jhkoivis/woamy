@@ -8,188 +8,6 @@
         "env": []
     },
     {
-        "id": "1643ae253a35ffee",
-        "type": "ui_spacer",
-        "z": "389b894943a43ae8",
-        "name": "spacer",
-        "group": "081e74f917a8cb44",
-        "order": 1,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "081e74f917a8cb44",
-        "type": "ui_group",
-        "name": "Conveyer Belt",
-        "tab": "d39b4959a5f94ec7",
-        "order": 1,
-        "disp": true,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "d39b4959a5f94ec7",
-        "type": "ui_tab",
-        "name": "WoamyOne",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "7c9cdce496b05649",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "72be69f49ff34214",
-        "type": "ui_group",
-        "name": "Foamer Air Flow",
-        "tab": "d39b4959a5f94ec7",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "da04fbb8882c3dc4",
-        "type": "ui_group",
-        "name": "Foamer Head Speed",
-        "tab": "d39b4959a5f94ec7",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "1270fdb95a863d2f",
-        "type": "ui_group",
-        "name": "Product pump speed",
-        "tab": "d39b4959a5f94ec7",
-        "order": 4,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "01265634c9e8b74b",
-        "type": "ui_group",
-        "name": "Back pressure",
-        "tab": "d39b4959a5f94ec7",
-        "order": 5,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "8fc72fd35c03bb7e",
-        "type": "ui_group",
-        "name": "Product Flow Capacity",
-        "tab": "d39b4959a5f94ec7",
-        "order": 6,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "19dad0f7d5dc3a46",
         "type": "debug",
         "z": "389b894943a43ae8",
@@ -998,5 +816,90 @@
                 "49e03f5cf27c1677"
             ]
         ]
+    },
+    {
+        "id": "1643ae253a35ffee",
+        "type": "ui_spacer",
+        "z": "389b894943a43ae8",
+        "name": "spacer",
+        "group": "081e74f917a8cb44",
+        "order": 1,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "081e74f917a8cb44",
+        "type": "ui_group",
+        "name": "Conveyer Belt",
+        "tab": "d39b4959a5f94ec7",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "72be69f49ff34214",
+        "type": "ui_group",
+        "name": "Foamer Air Flow",
+        "tab": "d39b4959a5f94ec7",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "da04fbb8882c3dc4",
+        "type": "ui_group",
+        "name": "Foamer Head Speed",
+        "tab": "d39b4959a5f94ec7",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1270fdb95a863d2f",
+        "type": "ui_group",
+        "name": "Product pump speed",
+        "tab": "d39b4959a5f94ec7",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "01265634c9e8b74b",
+        "type": "ui_group",
+        "name": "Back pressure",
+        "tab": "d39b4959a5f94ec7",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8fc72fd35c03bb7e",
+        "type": "ui_group",
+        "name": "Product Flow Capacity",
+        "tab": "d39b4959a5f94ec7",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d39b4959a5f94ec7",
+        "type": "ui_tab",
+        "name": "WoamyOne",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     }
 ]
