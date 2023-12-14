@@ -1,6 +1,6 @@
 
 
-import asyncio
+
 import array
 import sys
 import usb.core
@@ -12,9 +12,9 @@ class FlowSensor:
     def __init__(self, unit_name="flowSensor.1"):
         pass
 
-    async def _init(self):
-        self.VID = 0x1c4f #0x03f0 #0x046d
-        self.PID = 0x0034 #0x094a #0xc05a
+    def _init(self):
+        self.VID = 0x03f0 #0x046d
+        self.PID = 0x094a #0xc05a
         self.DATA_SIZE = 4
 
         # printina modulio vidurius :for i in dir(usb.util): print i
@@ -42,7 +42,7 @@ class FlowSensor:
         print(self.endpoint.wMaxPacketSize)
 
 
-    async def update(self):
+    def update(self):
 
         startTime = time.time()
         distance_travelled = 0
